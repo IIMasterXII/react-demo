@@ -1,0 +1,313 @@
+@font-face { font-family: arcade; src: url('./font/FuturaCondensedRegular.ttf'); } 
+
+.bg-temp {
+    background:url('./images/temp-background.png');
+    image-rendering: pixelated;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-title {
+    /* Center and scale the image nicely */
+    letter-spacing: 1px;
+}
+
+.ability-image{
+  padding-top:100%;
+  position:relative;
+}
+
+.game-window{
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.pixelated{
+  image-rendering: pixelated;
+}
+
+.text-red{
+  color:#ff5653;
+}
+
+.text-orange{
+  color: #ffc332;
+}
+
+.character-button::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #333a40c7;
+  z-index: 1;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.character-button:hover::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: transparent;
+  z-index: 1;
+}
+
+.character-button.on::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: transparent;
+  z-index: 1;
+}
+
+.character-button:focus{
+  outline: none;
+}
+
+body {
+    font-family:'arcade',sans-serif;
+    margin: 20px;
+  }
+  
+  ol, ul {
+    padding-left: 30px;
+  }
+  
+  .board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  
+  .status {
+    margin-bottom: 10px;
+  }
+  
+  .square {
+    background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 34px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 34px;
+  }
+  
+  .square:focus {
+    outline: none;
+  }
+  
+  .kbd-navigation .square:focus {
+    background: #ddd;
+  }
+  
+  .game {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .game-info {
+    margin-left: 20px;
+  }
+  
+.bg-dark-2{
+  background-color:#222;
+}
+
+.bg-viewport{
+  background-color:#082c21;
+}
+
+#btnLeft
+{
+  position: absolute;
+  left: 10px;
+}
+
+#btnRight
+{
+  position: absolute;
+  right: 10px;
+}
+
+#btnBtmR
+{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+#btnCenter
+{
+  position: absolute;
+  left: 150px;
+  top: 150px;
+}
+
+#tooltip
+{
+  position: absolute;
+  left: 50px; top: 50px;
+  text-align: left;
+  text-align: start;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  z-index:2;
+  display: none;
+}
+
+.cursor-hide{
+  cursor: none !important;
+}
+
+.cursor-hide button{
+  cursor: none !important;
+}
+
+.tooltip-button
+{
+  border: none;
+  background:transparent;
+  padding:0;
+}
+
+#tooltip.right
+{
+  margin-left: 5px;
+}
+
+#tooltip.left
+{
+  margin-left: -5px;
+}
+
+#tooltip.top
+{
+  margin-top: -5px;
+}
+
+#tooltip.bottom
+{
+  margin-top: 5px;
+}
+
+#tooltip .tooltip-arrow
+{
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000;
+}
+
+#tooltip.right .tooltip-arrow
+{
+  top: 50%;
+  left: auto;
+  margin-left: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000;
+}
+
+
+
+#tooltip.top .tooltip-arrow
+{
+  top: auto;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+
+#tooltip.left .tooltip-arrow
+{
+  top: 50%;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000;
+  right: -5px;
+  left: auto;
+}
+
+#tooltip.bottom .tooltip-arrow
+{
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+
+#tooltip .tooltip-arrow
+{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-right-color: transparent;
+  border-style: solid;
+}
+
+#tooltip.on
+{
+  display: block;
+}
+
+#tooltip.off
+{
+  display: none;
+}
+
+#window
+{
+  position: fixed;
+  left: 0; top: 0; bottom:0; right:0;
+  text-align: left;
+  text-align: start;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  z-index:2;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  /* background: #222222c9; */
+}
+
+#window.on
+{
+  display: flex;
+}
+
+#window.off
+{
+  display: none;
+}
